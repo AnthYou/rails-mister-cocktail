@@ -14,14 +14,14 @@
 
 
 <div class="container card p-5">
-  <div class="row">
-    <h2>Ingredients:</h2>
+  <div class="row mb-3">
+    <h2>Ingredients</h2>
   </div>
-      <% @cocktail.doses.each do |dose| %>
+    <% @cocktail.doses.each do |dose| %>
       <div class="row">
         <p><%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to '(delete)', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
-      <% end %>
+    <% end %>
   <div class="row">
     <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
   </div>
